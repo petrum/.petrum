@@ -7,8 +7,8 @@
 (load-file "~/.petrum/color-theme-6.6.0/color-theme.el")
 (require 'color-theme)
 (color-theme-initialize)
-;(color-theme-dark-laptop)
-(color-theme-comidia)
+(color-theme-dark-hober)
+;(color-theme-comidia)
 
 (setq inhibit-startup-echo-area-message t)
 (setq initial-scratch-message nil)
