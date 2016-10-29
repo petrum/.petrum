@@ -1,4 +1,5 @@
-;(load-file "~/doc/php-mode.el")
+
+					;(load-file "~/doc/php-mode.el")
 ;;(set-foreground-color "brightwhite")
 
 ;https://code.google.com/p/gnuemacscolorthemetest/
@@ -7,7 +8,7 @@
 (load-file "~/.petrum/color-theme-6.6.0/color-theme.el")
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-dark-hober)
+(color-theme-hober)
 ;(color-theme-comidia)
 
 (setq inhibit-startup-echo-area-message t)
