@@ -8,7 +8,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 ;(color-theme-dark-laptop)
-(color-theme-clarity)
+(color-theme-comidia)
 
 (setq inhibit-startup-echo-area-message t)
 (setq initial-scratch-message nil)
