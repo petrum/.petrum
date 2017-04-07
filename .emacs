@@ -1,5 +1,4 @@
-
-					;(load-file "~/doc/php-mode.el")
+;(load-file "~/doc/php-mode.el")
 ;;(set-foreground-color "brightwhite")
 
 ;https://code.google.com/p/gnuemacscolorthemetest/
@@ -9,7 +8,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-hober)
-;(color-theme-comidia)
+;(color-theme-fischmeister)
 
 (setq inhibit-startup-echo-area-message t)
 (setq initial-scratch-message nil)
