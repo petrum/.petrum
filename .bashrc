@@ -128,4 +128,5 @@ if ! service ssh status > /dev/null; then
     sudo service ssh start
 fi
 export PATH=~/scripts:$PATH
+export LANG="C.UTF-8"
 
