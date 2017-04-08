@@ -76,3 +76,5 @@ Starting from 'C' you end in 'B' or 'A'"
   (c-set-offset 'substatement-open 0))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 (add-hook 'c-mode-hook 'my-c++-mode-hook)
+(setq visible-bell nil
+      ring-bell-function #'ignore)
