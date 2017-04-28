@@ -124,9 +124,10 @@ alias st='git status'
 LS_COLORS='di=0;36'
 export LS_COLORS
 export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
+export PATH=~/scripts:$PATH
+export LANG="C.UTF-8"
+return 0
 if ! service ssh status > /dev/null; then
     sudo service ssh start
 fi
-export PATH=~/scripts:$PATH
-export LANG="C.UTF-8"
 
