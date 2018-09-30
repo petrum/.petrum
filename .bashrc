@@ -126,9 +126,9 @@ export LS_COLORS
 export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 export PATH=~/scripts:$PATH
 export LANG="C.UTF-8"
+export DISPLAY=:0
 return 0
 if ! service ssh status > /dev/null; then
     sudo service ssh start
 fi
-
 

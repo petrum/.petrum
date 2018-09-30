@@ -1,3 +1,5 @@
+set visualbell
+
 " Vim color scheme
 "
 " Name:         blackboard.vim
