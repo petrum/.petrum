@@ -5,7 +5,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-
 function parse_git_dirty {
   CLEAN=$(git status 2> /dev/null | grep -c "nothing to commit")
   if [[ $CLEAN != '1' ]]; then
