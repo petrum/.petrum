@@ -6,14 +6,14 @@
 [ -z "$PS1" ] && return
 
 function parse_git_dirty {
-  CLEAN=$(git status 2> /dev/null | grep -c "nothing to commit")
-  if [[ $CLEAN != '1' ]]; then
-    echo '*'
-  fi
+  [[ $(git status 2>/dev/null | grep -c "nothing to commit") != '1' ]] && echo '*'
 }
+
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+  git branch --no-color 2>/dev/null | grep '^* ' | sed 's/* \(.*\)/[\1$(parse_git_dirty)]/g'
 }
+
+export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\] $(parse_git_branch)$ '
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -59,46 +59,15 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='$> '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-# enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-#alias t="tmux a -t $(tmux ls | grep '^[0-9]*:.*' | sed 's/^\([0-9]*\):.*/\1/g' | tail -n 1)"
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -120,20 +89,18 @@ alias commit='git commit -a -m"misc"'
 alias gdiff='git difftool'
 alias st='git status'
 
-#LS_COLORS='di=0;36'
-#export LS_COLORS
 LS_COLORS=$LS_COLORS:'tw=01;35:ow=01;35:'
 export LS_COLORS
 
-export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\] $(parse_git_branch)$ '
 export PATH=~/scripts:$PATH
 export LANG="C.UTF-8"
 export DISPLAY=:0
+ulimit -c unlimited
 return 0
+
 if ! service ssh status > /dev/null; then
     sudo service ssh start
 fi
 
-ulimit -c unlimited
 
 
