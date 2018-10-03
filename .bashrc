@@ -7,7 +7,7 @@
 
 
 function parse_git_dirty {
-  CLEAN=$(git status 2> /dev/null | tail -n1 | grep -c "nothing to commit")
+  CLEAN=$(git status 2> /dev/null | grep -c "nothing to commit")
   if [[ $CLEAN != '1' ]]; then
     echo '*'
   fi
