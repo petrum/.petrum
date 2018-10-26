@@ -10,6 +10,11 @@
 (color-theme-hober)
 ;(color-theme-fischmeister)
 
+(add-hook 'emacs-startup-hook
+  (lambda ()
+    (load-theme 'hober)
+    ))
+
 (setq inhibit-startup-echo-area-message t)
 (setq initial-scratch-message nil)
 (setq inhibit-splash-screen t)
