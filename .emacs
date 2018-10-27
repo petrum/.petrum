@@ -7,8 +7,10 @@
 (load-file "~/.petrum/color-theme-6.6.0/color-theme.el")
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-hober)
-;(color-theme-fischmeister)
+
+;(color-theme-clarity)
+;(color-theme-taylor)
+(color-theme-lethe)
 
 (add-hook 'emacs-startup-hook
   (lambda ()
