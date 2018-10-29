@@ -94,7 +94,7 @@ export LS_COLORS
 
 export PATH=~/scripts:$PATH
 export LANG="C.UTF-8"
-export DISPLAY=:0
+#export DISPLAY=:0
 ulimit -c unlimited
 return 0
 
