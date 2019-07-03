@@ -99,7 +99,7 @@ ulimit -c unlimited
 export TMPDIR='/mnt/c/Users/petru/AppData/Local/Temp'
 alias gdiff='git difftool -y --no-symlinks'
 
-export PYTHONSTARTUP="~/.petrum/.startup.py"
+export PYTHONSTARTUP="$HOME/.petrum/.startup.py"
 
 return 0
 
