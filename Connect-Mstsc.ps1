@@ -48,6 +48,9 @@ http://www.jaapbrasser.com
 
 .EXAMPLE   
 . .\Connect-Mstsc.ps1
+
+PS C:\Users\petru> . .\Connect-Mstsc.ps1
+PS C:\Users\petru> Connect-Mstsc -ComputerName 127.0.10.11:6386 -User laurion\pmarginean -Password BogdanMaria02 -Verbose
     
 Description 
 -----------     
