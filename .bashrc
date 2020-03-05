@@ -88,6 +88,7 @@ export VISUAL="vim"
 alias commit='git commit -a -m"misc"'
 alias gdiff='git difftool'
 alias st='git status'
+alias speedtest=~/speedtest-cli/speedtest.py
 
 LS_COLORS=$LS_COLORS:'tw=01;35:ow=01;35:'
 export LS_COLORS
