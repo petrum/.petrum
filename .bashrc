@@ -95,9 +95,9 @@ export LS_COLORS
 
 export PATH=~/scripts:$PATH
 export LANG="C.UTF-8"
-export DISPLAY=localhost:0.0
+export DISPLAY=:0.0
 ulimit -c unlimited
-export TMPDIR='/mnt/c/Users/petru/AppData/Local/Temp'
+#export TMPDIR='/mnt/c/Users/petru/AppData/Local/Temp'
 alias gdiff='git difftool -y --no-symlinks'
 
 export PYTHONSTARTUP="$HOME/.petrum/.startup.py"
