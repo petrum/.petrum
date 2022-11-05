@@ -89,11 +89,11 @@ alias commit='git commit -a -m"misc"'
 alias gdiff='git difftool'
 alias st='git status'
 alias speedtest=~/speedtest-cli/speedtest.py
+alias idea=~/idea-IC-222.4345.14/bin/idea.sh
 
 LS_COLORS=$LS_COLORS:'tw=01;35:ow=01;35:'
 export LS_COLORS
 
-export PATH=~/scripts:$PATH
 export LANG="C.UTF-8"
 export DISPLAY=:0.0
 ulimit -c unlimited
